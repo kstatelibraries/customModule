@@ -1,0 +1,113 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "align": [true, "parameters"],
+    "arrow-parens": [true, "as-needed"],
+    "ban-types": [
+      true,
+      {
+        "types": [
+          "String",
+          "Number",
+          "Boolean"
+        ]
+      }
+    ],
+    "component-selector-type": [true, "element"],
+    "contextual-lifecycle": true,
+    "curly": true,
+    "deprecation": {
+      "severity": "warning"
+    },
+    "directive-selector": [true, "attribute"],
+    "eof-line": true,
+    "forin": false,
+    "import-blacklist": [
+      {
+        "rxjs": true
+      }
+    ],
+    "indent": [true, "spaces", 2],
+    "jsdoc-format": true,
+    "label-position": true,
+    "max-line-length": [true, 120],
+    "member-access": [true, "no-public"],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "static",
+          "instance",
+          "method"
+        ]
+      }
+    ],
+    "no-conflicting-lifecycle": true,
+    "no-console": [
+      true,
+      {
+        "ignoreVars": [
+          "console"
+        ]
+      }
+    ],
+    "no-debugger": true,
+    "no-duplicate-imports": true,
+    "no-empty": true,
+    "no-eval": true,
+    "no-input-rename": true,
+    "no-output-rename": true,
+    "no-redundant-declaration": true,
+    "no-shadowed-variable": true,
+    "no-string-literal": false,
+    "no-trailing-whitespace": true,
+    "no-unnecessary-callback": true,
+    "no-unused-expression": true,
+    "no-use-of-any": false, 
+    "no-var-keyword": true,
+    "object-literal-sort-keys": false,
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-finally",
+      "check-if",
+      "check-while"
+    ],
+    "ordered-imports": [
+      true,
+      {
+        "module-imports": [
+          "^@angular/",
+          "^rxjs",
+          "^[./]",
+          "^[../]",
+          "^[^./]"
+        ]
+      }
+    ],
+    "prefer-const": true,
+    "prefer-template": true,
+    "quote-style": [true, "single"],
+    "radix": true,
+    "require-jsdoc": false,
+    "semicolon": [true, "always"],
+    "space-before-function-paren": [true, "never"],
+    "strict-type-checks": false,
+    "trailing-comma": [true, { "multiline": true, "singleline": "bare-trailing", "esversion": 6 }],
+    "typedef-whitespace": [true, { "keywords": ["const", "var", "let"], "check-init": false }],
+    "unbound-method": false,
+    "use-isnan": true,
+    "whitespace": [true, { "check-branch": 0, "check-operator": "always" }]
+  },
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**/*",
+      "dist/**/*"
+    ]
+  }
+}

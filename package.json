@@ -5,7 +5,6 @@
     "ng": "ng",
     "start": "ng serve",
     "prestart": "node prebuild.js",
-    "prestart": "node prebuild.js",
     "start:no-prebundle": "ng serve --prebundle=false",
     "start:proxy": "ng serve --proxy-config ./proxy/proxy.conf.mjs",
     "build": "ng build",

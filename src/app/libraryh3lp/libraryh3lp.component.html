@@ -1,0 +1,47 @@
+<div class="libraryh3lp-container">
+  <aside tabindex="-1" style="display: block">
+    <button
+      (click)="toggleChat()"
+      (touchend)="toggleChat()"
+      class="h3lp"
+      style="transform: rotate(90deg)"
+    >
+      Chat
+    </button>
+    <div
+      id="chat-frame-wrap"
+      style="
+        display: none;
+        width: 280px;
+        background-color: #f5f5f5;
+        padding: 0;
+        box-shadow: -5px -5px 20px 5px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+        border: 0 none;
+        z-index: 200;
+      "
+    >
+      <button
+        (click)="toggleChat()"
+        (touchend)="toggleChat()"
+        style="
+          border: 0 none;
+          background: #f5f7fa;
+          font-size: 16px;
+          position: absolute;
+          padding: 5px;
+          right: -5px;
+          top: -15px;
+          border-radius: 50%;
+          width: 30px;
+          font-weight: bold;
+        "
+      >
+        ☓
+      </button>
+      <div class="needs-js"></div>
+    </div>
+  </aside>
+</div>

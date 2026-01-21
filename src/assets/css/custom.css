@@ -1,0 +1,149 @@
+/* Base styles */
+.footer-ksu {
+  width: 100%;
+  background-color: #e0e0e0;
+  color: #fff;
+  padding: 20px;
+  font-size: 0.875rem;
+}
+
+/* Container layout */
+.footer-ksu__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Section styling */
+.footer-ksu__section {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Links styling */
+.footer-ksu__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-ksu__links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-ksu__links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .footer-ksu__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-ksu__section {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Inner content */
+.footer-ksu__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .footer-ksu__inner {
+    flex-direction: row;
+  }
+}
+
+/* Logo styling */
+.footer-ksu__logo {
+  margin-bottom: 12px;
+}
+
+.footer-ksu__logo > img {
+  width: 250px;
+}
+
+@media (min-width: 768px) {
+  .footer-ksu__logo {
+    margin-right: 72px;
+  }
+}
+
+/* Menu container */
+.footer-ksu__menu-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  margin-top: 20px;
+}
+
+@media (min-width: 1024px) {
+  .footer-ksu__menu-container {
+    margin-top: 0;
+  }
+}
+
+/* Menu items */
+.footer-ksu__menu {
+  list-style: none;
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+  .footer-ksu__menu-item {
+    display: inline-block;
+    padding-left: 16px;
+    border-right: 1px solid #000;
+    padding-right: 16px;
+  }
+
+  .footer-ksu__menu-item:first-child {
+    padding-left: 0;
+  }
+
+  .footer-ksu__menu-item:last-child {
+    padding-right: 16px;
+    border-right: none;
+  }
+}
+
+/* Menu links */
+.footer-ksu__menu-link {
+  color: #000;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.footer-ksu__menu-link:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.footer-ksu__menu-link:active,
+.footer-ksu__menu-link:focus,
+.footer-ksu__menu-link:link,
+.footer-ksu__menu-link:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-ksu .footer-ksu__menu-link .degree-stats {
+  width: 140px;
+  height: auto;
+  vertical-align: baseline;
+}

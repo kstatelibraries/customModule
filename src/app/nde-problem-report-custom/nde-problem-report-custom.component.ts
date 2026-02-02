@@ -15,7 +15,7 @@ export class NdeProblemReportCustom implements OnInit {
   shouldDisplay: boolean = false;
 
   private formBaseUrl =
-    'https://kstate.qualtrics.com/jfe/form/SV_eROZUNQFDEk8jsO';
+    'https://kstate.qualtrics.com/jfe/form/SV_9XleO386qJUJrOm';
 
   constructor(private elementRef: ElementRef) {}
 
@@ -31,7 +31,7 @@ export class NdeProblemReportCustom implements OnInit {
     try {
       const element = this.elementRef.nativeElement;
       const parentContainer = element.closest(
-        '[id="brief.results.tabs.details"]'
+        '[id="nui.getit.service_viewit"]' // button display within "View It" section
       );
       return !!parentContainer;
     } catch (error) {
@@ -45,17 +45,17 @@ export class NdeProblemReportCustom implements OnInit {
       const pnx = this.hostComponent?.searchResult?.pnx;
       const genre = pnx?.addata?.genre?.[0] || '';
       const format = pnx?.addata?.format?.[0] || '';
-      const jtitle = pnx?.addata?.jtitle?.[0] || '';
-      const atitle = pnx?.addata?.atitle?.[0] || '';
-      const identifier = pnx?.display?.identifier?.[0] || '';
+      const jbtitle = pnx?.addata?.jtitle?.[0] || pnx?.addata?.btitle?.[0] || '';
+      const title = pnx?.addata?.atitle?.[0] || pnx?.addata?.btitle?.[0] || '';
+      const identifier = pnx?.addata?.isbn?.[0] || pnx?.addata?.issn?.[0] || '';
       const recordid = pnx?.control?.recordid?.[0] || '';
       const currentUrl = window.location.href;
 
       const params = new URLSearchParams({
         genre: genre,
         format: format,
-        jtitle: jtitle,
-        atitle: atitle,
+        jbtitle: jbtitle,
+        title: title,
         identifier: identifier,
         recordid: recordid,
         currentUrl: currentUrl,

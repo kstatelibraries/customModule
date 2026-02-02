@@ -1,3 +1,16 @@
+.report-bar {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  border: 1px solid #dedede;
+  text-align: center;
+  padding: 15px;
+  background-color: var(--lightBG);
+  margin: 15px auto;
+}
+
 div {
   height: auto;
   background-color: #e6e6e6;
@@ -27,9 +40,9 @@ button:hover {
 
 button span {
   color: #001337;
-  font-size: 1.2em;
+  // font-size: 1.2em;
   height: 100%;
-  font-family: 'Noto Sans Display', sans-serif;
+  // font-family: 'Noto Sans Display', sans-serif;
   display: flex;
   align-items: center;
   gap: 8px;

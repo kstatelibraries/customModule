@@ -6,5 +6,5 @@ import { PayFinesComponent } from '../pay-fines/pay-fines.component';
 export const selectorComponentMap = new Map<string, any>([
   ['nde-footer-after', Libraryh3lpComponent],
   ['nde-account-section-results-before', PayFinesComponent],
-  ['nde-full-display-service-container-before', NdeProblemReportCustom],
+  ['nde-full-display-service-container-after', NdeProblemReportCustom],
 ]);

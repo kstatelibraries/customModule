@@ -1,30 +1,23 @@
 name: Build and Collect ZIP
-
 on:
   push:
   pull_request:
   workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'npm'
-
       - name: Install dependencies
         run: npm ci
-
       - name: Build
         run: npm run build
-
 
       - name: Find ZIP file
         id: find_zip
@@ -34,13 +27,5 @@ jobs:
             echo "No .zip file found in dist/"
             exit 1
           fi
-          echo "zipfile=$FILE" >> "$GITHUB_OUTPUT"
-          echo "Found ZIP: $FILE"
-
-      - name: Upload ZIP artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-zip
-          path: ${{ steps.find_zip.outputs.zipfile }}
-          if-no-files-found: error
-          compression-level: 0
+          echo "zipfile=$FILE"
+          

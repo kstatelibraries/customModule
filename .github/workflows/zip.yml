@@ -21,18 +21,17 @@ jobs:
       - name: Find Directory
         id: find_dir
         run: |
-          DIR=$(find dist -maxdepth 1 -type d -name "01KSU_INST-KSU")
-          if [ -z "$DIR" ]; then
-            echo "No 01KSU_INST-KSU directory found in dist/"
+          DIR="dist/01KSU_INST-KSU"
+          if [ ! -d "$DIR" ]; then
+            echo "Directory not found: $DIR"
             exit 1
           fi
           echo "directory=$DIR" >> "$GITHUB_OUTPUT"
           echo "Found Directory: $DIR"
-      - name: Upload Directory artifact
+      - name: Upload Directory Artifact
         uses: actions/upload-artifact@v4
         with:
           name: 01KSU_INST-KSU
           path: ${{ steps.find_dir.outputs.directory }}
           if-no-files-found: error
-          compression-level: 0
           

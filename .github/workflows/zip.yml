@@ -23,5 +23,6 @@ jobs:
         with:
           name: 01KSU_INST-KSU
           path: |
-            dist/01KSU_INST-KSU/
-            
+            dist/
+            .
+            !01KSU_INST-KSU.zip

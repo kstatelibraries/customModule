@@ -1,4 +1,4 @@
-name: Build and Collect ZIP
+name: Build and Collect Directory
 on:
   push:
   pull_request:
@@ -18,23 +18,21 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-
-      - name: Find ZIP file
-        id: find_zip
+      - name: Find Directory
+        id: find_dir
         run: |
-          FILE=$(find dist -maxdepth 1 -type f -name "*.zip" | head -n 1)
-          if [ -z "$FILE" ]; then
-            echo "No .zip file found in dist/"
+          DIR=$(find dist -maxdepth 1 -type d -name "01KSU_INST-KSU")
+          if [ -z "$DIR" ]; then
+            echo "No 01KSU_INST-KSU directory found in dist/"
             exit 1
           fi
-          echo "zipfile=$FILE" >> "$GITHUB_OUTPUT"
-          echo "Found ZIP: $FILE"
-
-      - name: Upload ZIP artifact
+          echo "directory=$DIR" >> "$GITHUB_OUTPUT"
+          echo "Found Directory: $DIR"
+      - name: Upload Directory artifact
         uses: actions/upload-artifact@v4
         with:
-          name: 01KSU_INST-KSU.zip # Changed artifact name to the zip file name
-          path: ${{ steps.find_zip.outputs.zipfile }}
+          name: 01KSU_INST-KSU
+          path: ${{ steps.find_dir.outputs.directory }}
           if-no-files-found: error
           compression-level: 0
           

@@ -1,4 +1,4 @@
-name: Build and Collect Directory
+name: Build and Collect ZIP
 on:
   push:
   pull_request:
@@ -18,20 +18,14 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Find Directory
-        id: find_dir
+      - name: Zip Directory
         run: |
-          DIR="dist/01KSU_INST-KSU"
-          if [ ! -d "$DIR" ]; then
-            echo "Directory not found: $DIR"
-            exit 1
-          fi
-          echo "directory=$DIR" >> "$GITHUB_OUTPUT"
-          echo "Found Directory: $DIR"
-      - name: Upload Directory Artifact
+          zip -r build-zip.zip dist/01KSU_INST-KSU
+      - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
         with:
           name: 01KSU_INST-KSU
-          path: ${{ steps.find_dir.outputs.directory }}
+          path: build-zip.zip
           if-no-files-found: error
+          compression-level: 0
           

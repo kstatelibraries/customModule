@@ -46,3 +46,4 @@ jobs:
             dist/**/*.zip
             dist/*.zip
           if-no-files-found: error
+          compression-level: 0

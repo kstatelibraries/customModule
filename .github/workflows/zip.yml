@@ -25,25 +25,22 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Optional safety check if dist/ might not exist
-      - name: Verify dist directory
+
+      - name: Find ZIP file
+        id: find_zip
         run: |
-          if [ ! -d "dist" ]; then
-            echo "dist/ directory not found. Make sure your build outputs to dist/."
+          FILE=$(find dist -maxdepth 1 -type f -name "*.zip" | head -n 1)
+          if [ -z "$FILE" ]; then
+            echo "No .zip file found in dist/"
             exit 1
           fi
+          echo "zipfile=$FILE" >> "$GITHUB_OUTPUT"
+          echo "Found ZIP: $FILE"
 
-      # (Optional) List what was produced
-      - name: List build output
-        run: ls -lah dist
-
-      # Upload any .zip files from dist/ as a workflow artifact
-      - name: Upload ZIP artifact(s)
+      - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dist-zips
-          path: |
-            dist/**/*.zip
-            dist/*.zip
+          name: build-zip
+          path: ${{ steps.find_zip.outputs.zipfile }}
           if-no-files-found: error
           compression-level: 0

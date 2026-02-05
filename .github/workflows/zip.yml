@@ -27,5 +27,14 @@ jobs:
             echo "No .zip file found in dist/"
             exit 1
           fi
-          echo "zipfile=$FILE"
+          echo "zipfile=$FILE" >> "$GITHUB_OUTPUT"
+          echo "Found ZIP: $FILE"
+
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: 01KSU_INST-KSU.zip # Changed artifact name to the zip file name
+          path: ${{ steps.find_zip.outputs.zipfile }}
+          if-no-files-found: error
+          compression-level: 0
           

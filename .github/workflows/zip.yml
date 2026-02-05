@@ -20,12 +20,11 @@ jobs:
         run: npm run build
       - name: Zip Directory
         run: |
-          zip -r build-zip.zip dist/01KSU_INST-KSU
+          zip -r 01KSU_INST-KSU
       - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
         with:
           name: 01KSU_INST-KSU
-          path: build-zip.zip
+          path: 01KSU_INST-KSU
           if-no-files-found: error
           compression-level: 0
-          

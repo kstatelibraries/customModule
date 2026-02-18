@@ -47,7 +47,7 @@ export class NdeProblemReportCustom implements OnInit {
       const format = pnx?.addata?.format?.[0] || '';
       const jbtitle = pnx?.addata?.jtitle?.[0] || pnx?.addata?.btitle?.[0] || '';
       const title = pnx?.addata?.atitle?.[0] || pnx?.addata?.btitle?.[0] || '';
-      const identifier = pnx?.addata?.isbn?.[0] || pnx?.addata?.issn?.[0] || '';
+      const identifier = pnx?.addata?.isbn?.[0] || pnx?.addata?.issn?.[0] || pnx?.addata?.eissn?.[0] || pnx?.addata?.eisbn?.[0] || '';
       const recordid = pnx?.control?.recordid?.[0] || '';
       const currentUrl = window.location.href;
 

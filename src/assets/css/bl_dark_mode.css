@@ -1,0 +1,148 @@
+/* https://catalogue.bl.uk/nde/home?vid=44BL_MAIN:BLL01_NDE&lang=en */
+/*** DARK MODE ***/
+/* Can be switched off by commenting out the @import in the custom.css file */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --sys-primary: #e8e6dc !important;
+        --sys-inverse-on-surface: #28261b !important;
+        --sys-primary-fixed: #202020 !important;
+        --whiteBG: #121212 !important;
+        --lightBG: #1e1e1e !important;
+        --darkBG: #333333 !important;
+        --darkText: #e8e6dc !important;
+        --shadow-light: 0px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        --shadow-medium: 0px 4px 10px rgba(0, 0, 0, 0.7) !important;
+        --transition-fast: 0.15s ease-in-out !important;
+        --button-text: #e8e6dc !important;
+        --noticeBG: #355f3a !important;
+        --listBG1: #1e1e1e !important;
+        --listBG2: #121212 !important;
+        --footerBG: #1e1e1e !important;
+        --footernav1: #fff !important;
+        --footernav2: #bbb !important;
+        --footernav3: #999 !important;
+        --footerborder: #444 !important;
+        --mat-expansion-container-text-color: #e8e6dc !important;
+        --sys-background: var(--whiteBG) !important;
+		--mdc-dialog-supporting-text-color: var(--sys-primary);
+		--sys-outline: var(--sys-primary);
+		--sys-on-surface-variant: var(--sys-primary);
+		--mat-switch-label-text-color: var(--sys-primary);
+		--sys-primary-container: var(--sys-inverse-on-surface);
+		--mat-option-label-text-color: var(--sys-primary);
+		--mat-option-selected-state-label-text-color: var(--sys-primary);
+		--mat-datepicker-calendar-navigation-button-icon-color: var(--sys-inverse-on-surface);
+		--mat-datepicker-calendar-date-selected-state-background-color: var(--sys-inverse-on-surface);
+		--mat-datepicker-calendar-date-today-outline-color: var(--sys-inverse-on-surface);
+		--mat-datepicker-calendar-header-text-color: var(--sys-inverse-on-surface);
+    }
+
+    body {
+        background-color: var(--whiteBG) !important;
+        color: var(--sys-primary) !important;
+    }
+    /* Top bar */
+    button.user-area-logged-in span.ng-star-inserted, .submit-btn {
+        background: var(--sys-primary) !important;
+        color: var(--sys-inverse-on-surface) !important;
+    }
+    /* Main menu links */
+    li .mdc-button__label span {
+        color: var(--sys-primary) !important;
+    }
+    /* Search components */
+    .custom-search-bar-container h2,
+    .mdc-floating-label {
+        color: var(--button-text) !important;
+    }
+    .search_box_container input,
+    .search-bar-wrapper {
+        color: var(--sys-primary) !important;
+        background-color: var(--lightBG) !important;
+    }
+    mat-icon[data-mat-icon-name="natural-language-search"] svg path {
+        fill: var(--sys-primary) !important;
+    }
+    /* Dropdown menus */
+    .mat-mdc-menu-item .mat-mdc-menu-item-text span,
+    .mat-mdc-select-panel mat-option .break-word {
+        color: var(--sys-primary) !important;
+    }
+    .mat-mdc-menu-item {
+        background-color: var(--lightBG) !important;
+    }
+    .mat-mdc-menu-item.selected {
+        background-color: var(--darkBG) !important;
+    }
+    /* Buttons */
+	button[data-qa="submit-advanced-search-form"],
+	#myLibraryCard, .quick-filter-btn-active.mdc-button, .select-title,
+	.mdc-checkbox__checkmark, .mat-mdc-unelevated-button:not(:disabled),
+	.getit-filter-button[aria-expanded="true"] .mdc-button__label span, 
+	nde-login.login-btn .flex-row a.availability-button, 
+	nde-login.login-btn .flex-row mat-icon svg path {
+        color: var(--sys-inverse-on-surface) !important;
+	}
+    /* Brief results & resource recommender */
+    button.quick-filter-btn.mat-mdc-outlined-button,
+    [id^="card-"] > nde-resource-recommender-card > mat-card {
+        color: var(--sys-primary);
+    }
+    img.record-thumbnail[src$=".png"] {
+        filter: invert(70%) brightness(100%);
+    }
+    /* Full view & requests */
+	.mat-mdc-autocomplete-panel .mdc-list-item__primary-text, 
+	.mat-mdc-input-element,
+    .no-requests,
+    .mat-expansion-panel-header-title,
+    .details-label,
+	.availability-text,
+    .mat-mdc-tooltip-surface,
+    .mat-mdc-dialog-title,
+    .mat-mdc-select-value-text,
+    .search-history-card-title,
+    .location-brief-properties-container,
+	mat-slide-toggle[data-qa="filters_toggle_button_rememberAll"] .mdc-label,
+	mat-slide-toggle[data-qa="filters_toggle_expand_my_results"] .mdc-label	{
+        color: var(--sys-primary) !important;
+    }
+    /* Cards & containers */
+    .user-area-sub-menu,
+    a[data-qa="account-menu-overview"],
+    .signed-in-user-details,
+    .carousel-card,
+    .mat-mdc-card-content {
+        background-color: var(--lightBG) !important;
+    }
+    .mat-mdc-dialog-surface {
+        background-color: var(--darkBG) !important;
+    }
+    .mat-mdc-card-header {
+        background-color: var(--darkBG);
+        margin-bottom: -1rem;
+    }
+	/* toggle on button */
+	.mdc-switch__shadow { 
+		background-color: var(--sys-inverse-on-surface);
+	}
+	/* Renew confirmation in user area */
+	.renew-success, .success-alert-background {
+		background-color: var(--darkBG) !important;
+	}
+	.failure-alert-background, .renew-error {
+		background-color: var(--darkBG) !important;
+	}
+	/* Request form calendar arrow and year button */
+	.mat-calendar-arrow {
+		fill: var(--sys-inverse-on-surface) !important;
+	}
+	.mat-calendar-period-button, {
+		color: var(--sys-inverse-on-surface) !important;
+	}
+	/* This is used as overloading the original selectors were not working for dark mode */
+	.resource-recommender-banner-overlay .flex-column > :is(.banner-name, .banner-title, .banner-description) {
+		color: var(--sys-inverse-on-surface) !important;
+	}
+}

@@ -8,6 +8,7 @@ import {TranslateModule} from "@ngx-translate/core";
 import { CommonModule } from '@angular/common';
 import { AutoAssetSrcDirective } from './services/auto-asset-src.directive';
 import {SHELL_ROUTER} from "./injection-tokens";
+import {GoogleTagManagerComponent} from "./components/google-tag-manager/google-tag-manager.component";
 
 
 
@@ -15,9 +16,10 @@ export const AppModule = ({providers, shellRouter}: {providers:any, shellRouter:
    @NgModule({
     declarations: [
       AppComponent,
-      AutoAssetSrcDirective
+      AutoAssetSrcDirective,
+      GoogleTagManagerComponent
     ],
-    exports: [AutoAssetSrcDirective],
+    exports: [AutoAssetSrcDirective, GoogleTagManagerComponent],
     imports: [
       BrowserModule,
       CommonModule,
@@ -50,4 +52,3 @@ export const AppModule = ({providers, shellRouter}: {providers:any, shellRouter:
   }
   return AppModule
 }
-

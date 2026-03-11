@@ -14,15 +14,15 @@ import {SHELL_ROUTER} from "./injection-tokens";
 export const AppModule = ({providers, shellRouter}: {providers:any, shellRouter: Router}) => {
    @NgModule({
     declarations: [
-      AppComponent,
-      AutoAssetSrcDirective
+      AppComponent
     ],
-    exports: [AutoAssetSrcDirective],
     imports: [
       BrowserModule,
       CommonModule,
+      AutoAssetSrcDirective,      
       TranslateModule.forRoot({})
     ],
+    exports: [AutoAssetSrcDirective],
     providers: [...providers, {provide: SHELL_ROUTER, useValue: shellRouter}],
     bootstrap: []
   })

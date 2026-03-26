@@ -28,7 +28,7 @@ export class LibraryAlertsPannelComponent implements OnInit {
 
   private getAlerts(): void {
     this.http
-      .get<any>('http://127.0.0.1:5000/data/website_alerts/')
+      .get<any>('https://tools.lib.k-state.edu/data/website_alerts/')
       .subscribe({
         next: (data) => {
           this.showAlertInfo = data?.informational?.active === true;

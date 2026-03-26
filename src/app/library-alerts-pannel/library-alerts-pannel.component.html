@@ -1,0 +1,55 @@
+<div
+  id="alert-box-info"
+  class="alert-box alert-box__normal"
+  *ngIf="showAlertInfo"
+>
+  <div class="alert-icon">
+    <img
+      src="https://lib.k-state.edu/images/svg/bellicon-01.svg"
+      alt=""
+    />
+  </div>
+
+  <div class="alert-box-text">
+    <span style="font-weight: bold;">Information: </span>
+    <div [innerHTML]="infoMessage"></div>
+  </div>
+
+  <div
+    class="alert-icon alert-icon__close"
+    (click)="closeAlert('info')"
+  >
+    <img
+      src="https://lib.k-state.edu/images/svg/xpurple-01.svg"
+      alt="Close Alert Button"
+    />
+  </div>
+</div>
+
+<div
+  id="alert-box-emergency"
+  class="alert-box alert-box__normal"
+  *ngIf="showAlertEmergency"
+>
+  <div class="alert-icon">
+    <img
+      src="https://lib.k-state.edu/images/svg/bellicon-01.svg"
+      alt=""
+    />
+  </div>
+
+  <div class="alert-box-text">
+    <span style="font-weight: bold;">ALERT: </span>
+    <div [innerHTML]="emergencyMessage"></div>
+  </div>
+
+  <div
+    class="alert-icon alert-icon__close"
+    (click)="closeAlert('emergency')"
+  >
+    <img
+      src="https://lib.k-state.edu/images/svg/xpurple-01.svg"
+      alt="Close Alert Button"
+    />
+  </div>
+</div>

@@ -8,6 +8,7 @@ import {TranslateModule} from "@ngx-translate/core";
 import { CommonModule } from '@angular/common';
 import { AutoAssetSrcDirective } from './services/auto-asset-src.directive';
 import {SHELL_ROUTER} from "./injection-tokens";
+import {HttpClientModule} from '@angular/common/http'
 
 
 
@@ -21,6 +22,7 @@ export const AppModule = ({providers, shellRouter}: {providers:any, shellRouter:
     imports: [
       BrowserModule,
       CommonModule,
+      HttpClientModule,
       TranslateModule.forRoot({})
     ],
     providers: [...providers, {provide: SHELL_ROUTER, useValue: shellRouter}],

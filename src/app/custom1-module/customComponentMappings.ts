@@ -2,6 +2,7 @@ import { LibraryAlertsPannelComponent } from '../library-alerts-pannel/library-a
 import { Libraryh3lpComponent } from '../libraryh3lp/libraryh3lp.component';
 import { NdeProblemReportCustom } from '../nde-problem-report-custom/nde-problem-report-custom.component';
 import { PayFinesComponent } from '../pay-fines/pay-fines.component';
+import { TrafficResultLimitComponent } from '../traffic-result-limit/traffic-result-limit.component';
 
 // Define the map
 export const selectorComponentMap = new Map<string, any>([
@@ -9,4 +10,5 @@ export const selectorComponentMap = new Map<string, any>([
   ['nde-account-section-results-before', PayFinesComponent],
   ['nde-full-display-service-container-after', NdeProblemReportCustom],
   ['nde-top-bar-after', LibraryAlertsPannelComponent],
+  ['nde-search-no-results-before', TrafficResultLimitComponent]
 ]);

@@ -7,7 +7,7 @@ import { TrafficResultLimitComponent } from '../traffic-result-limit/traffic-res
 // Define the map
 export const selectorComponentMap = new Map<string, any>([
   ['nde-footer-after', Libraryh3lpComponent],
-  ['nde-account-section-results-before', PayFinesComponent],
+  ['nde-fines-before', PayFinesComponent],
   ['nde-full-display-service-container-after', NdeProblemReportCustom],
   ['nde-top-bar-after', LibraryAlertsPannelComponent],
   ['nde-search-no-results-before', TrafficResultLimitComponent]

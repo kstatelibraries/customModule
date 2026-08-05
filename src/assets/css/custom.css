@@ -147,3 +147,8 @@
   height: auto;
   vertical-align: baseline;
 }
+
+/* Hide Title Level Request Button and Options */
+nde-location-items-requests {
+  display: none;
+}

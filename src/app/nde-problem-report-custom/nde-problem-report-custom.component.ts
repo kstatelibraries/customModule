@@ -49,6 +49,7 @@ export class NdeProblemReportCustom implements OnInit {
       const title = pnx?.addata?.atitle?.[0] || pnx?.addata?.btitle?.[0] || '';
       const identifier = pnx?.addata?.isbn?.[0] || pnx?.addata?.issn?.[0] || pnx?.addata?.eissn?.[0] || pnx?.addata?.eisbn?.[0] || '';
       const recordid = pnx?.control?.recordid?.[0] || '';
+      const enumeration = 'volume ' + pnx?.addata?.volume?.[0] + ': issue ' + pnx?.addata?.issue?.[0];
       const currentUrl = window.location.href;
 
       const params = new URLSearchParams({
@@ -58,6 +59,7 @@ export class NdeProblemReportCustom implements OnInit {
         title: title,
         identifier: identifier,
         recordid: recordid,
+        enumeration: enumeration,
         currentUrl: currentUrl,
       });
 

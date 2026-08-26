@@ -1,11 +1,10 @@
 name: Build and Collect ZIP
 on:
   push:
-    branches:
-      - sandbox
+    branches: [ sandbox, production ]
   pull_request:
-    branches:
-      - production
+    branches: [ production ]
+    types: [ closed ]
   workflow_dispatch:
 jobs:
   build:

@@ -5,4 +5,4 @@ repos:
     stages:
     - pre-push
   repo: https://github.com/commitizen-tools/commitizen
-  rev: v4.8.3
+  rev: v4.18.0

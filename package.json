@@ -13,7 +13,8 @@
     "postbuild": "node postbuild.js",
     "prebuild": "node prebuild.js",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
-    "prettier": "prettier --write src/**/*.{ts,js,css,html}"
+    "prettier": "prettier --write src/**/*.{ts,js,css,html}",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -47,6 +48,8 @@
     "@angular/compiler-cli": "^18.2.8",
     "@types/jasmine": "~4.3.0",
     "archiver": "^7.0.1",
+    "commitizen": "^4.3.2",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.1.7",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
@@ -69,9 +72,9 @@
     "esbuild@0.23.0": true
   },
   "husky": {
-  "hooks": {
-    "pre-commit": "npm run prettier --staged && ng lint && npm test",
-    "pre-push": "ng build --aot true"
+    "hooks": {
+      "pre-commit": "npm run prettier --staged && ng lint && npm test",
+      "pre-push": "ng build --aot true"
+    }
   }
-}
 }

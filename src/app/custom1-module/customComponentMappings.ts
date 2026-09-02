@@ -7,7 +7,7 @@ import { PickupFilterComponent } from '../pickup-filter/pickup-filter.component'
 
 // Define the map
 export const selectorComponentMap = new Map<string, any>([
-  ['nde-footer-after', Libraryh3lpComponent],
+  ['nde-user-area-after', Libraryh3lpComponent],
   ['nde-fines-before', PayFinesComponent],
   ['nde-full-display-service-container-after', NdeProblemReportCustom],
   ['nde-top-bar-after', LibraryAlertsPannelComponent],

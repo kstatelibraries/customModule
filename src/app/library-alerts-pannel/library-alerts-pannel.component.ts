@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { MixpanelService } from '../services/mixpanel.service';
 
 @Component({
   selector: 'library-alerts-pannel',
@@ -19,7 +20,8 @@ export class LibraryAlertsPannelComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private mixpanel: MixpanelService
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +35,22 @@ export class LibraryAlertsPannelComponent implements OnInit {
         next: (data) => {
           this.showAlertInfo = data?.informational?.active === true;
           this.showAlertEmergency = data?.emergency?.active === true;
+
+          if (this.showAlertInfo) {
+            this.mixpanel.track('Library Alert Displayed', {
+              alert_type: 'informational',
+              severity: data?.informational?.severity || 'info',
+              message_length: data?.informational?.message?.length || 0,
+            });
+          }
+
+          if (this.showAlertEmergency) {
+            this.mixpanel.track('Library Alert Displayed', {
+              alert_type: 'emergency',
+              severity: data?.emergency?.severity || 'high',
+              message_length: data?.emergency?.message?.length || 0,
+            });
+          }
 
           this.infoMessage = this.sanitizer.bypassSecurityTrustHtml(
             this.decodeHtmlEntitiesDeep(data?.informational?.message)
@@ -51,10 +69,16 @@ export class LibraryAlertsPannelComponent implements OnInit {
   closeAlert(type: 'info' | 'emergency'): void {
     if (type === 'info') {
       this.showAlertInfo = false;
+      this.mixpanel.track('Library Alert Dismissed', {
+        alert_type: 'informational'
+      });
     }
 
     if (type === 'emergency') {
       this.showAlertEmergency = false;
+      this.mixpanel.track('Library Alert Dismissed', {
+        alert_type: 'emergency'
+      });
     }
   }
 

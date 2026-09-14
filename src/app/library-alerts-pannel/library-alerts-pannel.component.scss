@@ -1,10 +1,10 @@
-.alerts {
+.alerts .info-bar {
   padding-bottom: 0;
   max-width: 1260px;
   margin: 0 auto;
 }
 
-.alert-box {
+.alert-box, .info-bar {
   font-size: 1.25rem;
   padding: 20px 30px;
   text-align: left;
@@ -28,7 +28,7 @@
   background: #ba1623;
 }
 
-.alert-box__normal {
+.alert-box__normal, .info-bar {
   color: #512888;
   background: #e6e6e6;
   border: 1px solid #512888;

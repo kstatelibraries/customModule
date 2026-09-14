@@ -15,8 +15,7 @@ export class MixpanelService {
       mixpanel.init(projectToken, { debug: false, autocapture: false });
       mixpanel.register({
         vid: this.getVid(),
-        library: 'Kansas State',
-        user_type: this.getUserType()
+        library: 'Kansas State'
       });
       this.initialized = true;
     }
@@ -33,8 +32,7 @@ export class MixpanelService {
       referrer: this.document.referrer,
       timestamp: new Date().toISOString(),
       time_on_page_ms: Date.now() - this.pageStartTime,
-      vid: this.getVid(),
-      user_type: this.getUserType()
+      vid: this.getVid()
     };
 
     mp.track(eventName, enriched);
@@ -46,7 +44,6 @@ export class MixpanelService {
   }
 
   private getUserType(): string {
-    // Replace with real check from your store / auth service
     return 'anonymous';
   }
 }

@@ -4,6 +4,7 @@ import { NdeProblemReportCustom } from '../nde-problem-report-custom/nde-problem
 import { PayFinesComponent } from '../pay-fines/pay-fines.component';
 import { TrafficResultLimitComponent } from '../traffic-result-limit/traffic-result-limit.component';
 import { PickupFilterComponent } from '../pickup-filter/pickup-filter.component';
+import { NdeViewItReorderComponent } from '../nde-view-it-reorder/nde-view-it-reorder.component';
 
 // Define the map
 export const selectorComponentMap = new Map<string, any>([
@@ -13,4 +14,5 @@ export const selectorComponentMap = new Map<string, any>([
   ['nde-top-bar-after', LibraryAlertsPannelComponent],
   ['nde-search-no-results-before', TrafficResultLimitComponent],
   ['nde-formly-general-wrapper-bottom', PickupFilterComponent],
+  ['nde-full-display-service-container-before', NdeViewItReorderComponent],
 ]);

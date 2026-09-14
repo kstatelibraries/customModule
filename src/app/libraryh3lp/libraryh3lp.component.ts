@@ -8,6 +8,7 @@ import {
   ElementRef,
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { MixpanelService } from '../services/mixpanel.service';
 @Component({
   selector: 'app-libraryh3lp',
   templateUrl: './libraryh3lp.component.html',
@@ -19,7 +20,8 @@ export class Libraryh3lpComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     private renderer: Renderer2,
     private elementRef: ElementRef,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private mixpanel: MixpanelService
   ) {}
   ngOnInit() {
     // No initialization needed here
@@ -30,13 +32,21 @@ export class Libraryh3lpComponent implements OnInit, OnDestroy, AfterViewInit {
       this.showChat = false;
       this.chatFrameWrap.style.display = 'none';
     }
-    // Load the script (as in your original implementation)
     this.loadScript();
   }
   toggleChat() {
     this.showChat = !this.showChat;
     if (this.chatFrameWrap) {
       this.chatFrameWrap.style.display = this.showChat ? 'block' : 'none';
+    }
+    if (this.showChat) {
+      this.mixpanel.track('Library Chat Opened', {
+        widget_id: '19250',
+      });
+    } else {
+      this.mixpanel.track('Library Chat Closed', {
+        widget_id: '19250',
+      });
     }
   }
   loadScript() {
@@ -49,8 +59,5 @@ export class Libraryh3lpComponent implements OnInit, OnDestroy, AfterViewInit {
     );
     this.renderer.appendChild(this.document.body, script);
   }
-  ngOnDestroy() {
-    // Cleanup if needed (not strictly necessary here)
-    // For example, if you had any event listeners that need to be removed
-  }
+  ngOnDestroy() {}
 }

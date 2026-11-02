@@ -6,6 +6,7 @@ import { TrafficResultLimitComponent } from '../traffic-result-limit/traffic-res
 import { PickupFilterComponent } from '../pickup-filter/pickup-filter.component';
 import { NdeViewItReorderComponent } from '../nde-view-it-reorder/nde-view-it-reorder.component';
 import { NdeRequestReorderComponent } from '../nde-request-reorder/nde-request-reorder.component';
+import { FilterAssistPanelComponent } from '../filter-assist-panel/filter-assist-panel.component';
 
 // Define the map
 export const selectorComponentMap = new Map<string, any>([
@@ -17,4 +18,5 @@ export const selectorComponentMap = new Map<string, any>([
   ['nde-formly-general-wrapper-bottom', PickupFilterComponent],
   ['nde-full-display-service-container-before', NdeViewItReorderComponent],
   ['nde-search-result-item-container-after', NdeRequestReorderComponent],
+  ['nde-filters-group-before', FilterAssistPanelComponent],
 ]);

@@ -15,16 +15,16 @@ import {HttpClientModule} from '@angular/common/http'
 export const AppModule = ({providers, shellRouter}: {providers:any, shellRouter: Router}) => {
    @NgModule({
     declarations: [
-      AppComponent,
-      AutoAssetSrcDirective
+      AppComponent
     ],
-    exports: [AutoAssetSrcDirective],
     imports: [
+      AutoAssetSrcDirective,
       BrowserModule,
       CommonModule,
       HttpClientModule,
       TranslateModule.forRoot({})
     ],
+    exports: [AutoAssetSrcDirective],
     providers: [...providers, {provide: SHELL_ROUTER, useValue: shellRouter}],
     bootstrap: []
   })
@@ -52,4 +52,3 @@ export const AppModule = ({providers, shellRouter}: {providers:any, shellRouter:
   }
   return AppModule
 }
-
